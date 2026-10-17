@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental LLC Structure</title>
+<meta name="description" content="Two partners, one rental: one 50/50 LLC versus two separate LLCs.">
+<style>
+  :root {
+    --bg: #f7f6f2; --surface: #ffffff; --text: #1d1f23; --muted: #5d636e;
+    --border: #e2e0d8; --accent: #2f6f4f; --accent-soft: #e5f1ea;
+    --warn: #8a5a12; --warn-soft: #fbf1df; --code-bg: #f0eee7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a; --surface: #1d2024; --text: #e8e8e6; --muted: #a2a7b0;
+      --border: #30343a; --accent: #7cc49d; --accent-soft: #1f3329;
+      --warn: #e6b566; --warn-soft: #33291a; --code-bg: #24272c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171a; --surface: #1d2024; --text: #e8e8e6; --muted: #a2a7b0;
+    --border: #30343a; --accent: #7cc49d; --accent-soft: #1f3329;
+    --warn: #e6b566; --warn-soft: #33291a; --code-bg: #24272c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 820px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { margin-bottom: 32px; }
+  .eyebrow { color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+  h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.2; margin: 6px 0 10px; }
+  .lede { color: var(--muted); font-size: 18px; margin: 0; }
+  h2 { font-size: 22px; margin: 40px 0 12px; }
+  h3 { font-size: 17px; margin: 22px 0 8px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 22px; margin: 16px 0;
+  }
+  .card.rec { border-left: 4px solid var(--accent); }
+  .verdict {
+    background: var(--accent-soft); border-radius: 12px; padding: 18px 22px;
+    font-size: 17px;
+  }
+  .verdict strong { color: var(--accent); }
+  .tag {
+    display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px;
+    border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+    vertical-align: middle; margin-left: 6px;
+  }
+  pre {
+    background: var(--code-bg); border-radius: 8px; padding: 14px 16px;
+    overflow-x: auto; font: 13.5px/1.5 ui-monospace, Consolas, monospace; margin: 12px 0;
+  }
+  ul, ol { padding-left: 22px; }
+  li { margin: 4px 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+  .pros h4, .cons h4 { margin: 0 0 6px; font-size: 14px; text-transform: uppercase; letter-spacing: .05em; }
+  .pros h4 { color: var(--accent); }
+  .cons h4 { color: var(--warn); }
+  .note {
+    background: var(--warn-soft); border-radius: 10px; padding: 14px 18px; margin: 16px 0;
+  }
+  .note strong { color: var(--warn); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  .table-wrap { overflow-x: auto; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); padding-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Rental property · 2 partners</div>
+    <h1>One 50/50 LLC or two separate LLCs?</h1>
+    <p class="lede">How to structure a rental owned by two partners, and how profit, loss and taxes flow to each person.</p>
+  </header>
+
+  <div class="verdict">
+    <strong>Short answer:</strong> for most two-partner rentals, form <strong>one LLC owned 50/50</strong> by both partners and let it be taxed as a partnership. Use a separate LLC for each additional property.
+  </div>
+
+  <h2>Option 1 — One LLC, 50/50 <span class="tag">Recommended</span></h2>
+  <div class="card rec">
+<pre>Partner A (50%) ─┐
+                 ├── Rental LLC ── owns property
+Partner B (50%) ─┘</pre>
+    <p><strong>How tax works:</strong> an LLC with two members is taxed as a partnership by default. The LLC files Form 1065 each year, which is informational, so the LLC itself pays no tax. Each partner receives a K-1 showing their 50% of income, expenses and depreciation, and reports it on Schedule E of their own Form 1040. The 50/50 split of P&amp;L and tax happens automatically.</p>
+    <div class="grid">
+      <div class="pros">
+        <h4>Pros</h4>
+        <ul>
+          <li>One bank account, one set of books, one tax return</li>
+          <li>Lender, insurer and title company deal with one owner</li>
+          <li>Clean liability protection</li>
+          <li>Easy to split profit, loss and depreciation</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Cons</h4>
+        <ul>
+          <li>CPA fee for the partnership return, often $500–$1,500+ a year</li>
+          <li>Partners are tied together, so a strong operating agreement is essential</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Note:</strong> an LLC with two owners can't be "100% owned" and split later. Once two people own it, it is a partnership for tax purposes. The exception is a married couple in a community-property state, who can elect to be treated as a single owner.
+  </div>
+
+  <h2>Option 2 — Two LLCs, one per partner</h2>
+  <p>There are two ways to set this up, and neither is ideal for a typical deal.</p>
+
+  <div class="card">
+    <h3>2a. Each LLC owns 50% of the property directly (tenants-in-common)</h3>
+    <ul>
+      <li>Lenders dislike it; refinancing and selling are harder</li>
+      <li>Both LLCs must sign everything</li>
+      <li>Mainly useful for 1031-exchange situations where partners may split up later</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>2b. Each partner's LLC owns 50% of one shared Rental LLC (holding structure)</h3>
+<pre>Partner A → A Holding LLC (50%) ─┐
+                                 ├── Rental LLC ── property
+Partner B → B Holding LLC (50%) ─┘</pre>
+    <ul>
+      <li>Extra privacy and estate-planning flexibility; each partner manages their own share</li>
+      <li>Same tax result, but more formation cost and annual state fees (e.g. California charges $800 per LLC per year)</li>
+      <li>Only worth it if each partner owns other properties or has specific asset-protection needs</li>
+    </ul>
+  </div>
+
+  <h2>Side by side</h2>
+  <div class="card table-wrap">
+    <table>
+      <thead><tr><th></th><th>One 50/50 LLC</th><th>Two LLCs (TIC)</th><th>Holding LLCs</th></tr></thead>
+      <tbody>
+        <tr><td>Tax returns</td><td>1 partnership return</td><td>Each LLC reports its half</td><td>1 partnership return + each holding LLC</td></tr>
+        <tr><td>State fees</td><td>1 LLC</td><td>2 LLCs</td><td>3 LLCs</td></tr>
+        <tr><td>Financing</td><td>Easiest</td><td>Hardest</td><td>Moderate</td></tr>
+        <tr><td>Admin effort</td><td>Low</td><td>High</td><td>Medium–high</td></tr>
+        <tr><td>Best for</td><td>Most partners</td><td>Planned split / 1031</td><td>Partners with larger portfolios</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Recommended setup</h2>
+  <ol>
+    <li><strong>Form one LLC with 50/50 ownership</strong>, taxed as a partnership.</li>
+    <li><strong>Use a separate LLC for each property</strong> as you grow, so a lawsuit on one property can't reach the others.</li>
+    <li><strong>Get the operating agreement right.</strong> It matters more than the structure. It should cover:
+      <ul>
+        <li>Each partner's contribution, and what happens if someone can't pay their share of a capital call</li>
+        <li>Who decides what, and how a 50/50 deadlock is broken</li>
+        <li>A buy-sell clause for death, divorce, disability or a partner who wants out, including right of first refusal and how the price is set</li>
+        <li>How profits are split and when cash is distributed</li>
+      </ul>
+    </li>
+    <li><strong>Financing:</strong> conventional loans are hard to get in an LLC's name; many investors use DSCR or commercial loans. If you buy in personal names and transfer to the LLC later, the loan's due-on-sale clause could let the lender demand full repayment, so ask the lender first.</li>
+    <li><strong>Insurance:</strong> add an umbrella policy. The LLC alone isn't full protection.</li>
+  </ol>
+
+  <h2>When two LLCs could make sense</h2>
+  <ul>
+    <li>The partners have very different goals, such as one wanting to sell soon and the other to 1031-exchange</li>
+    <li>One partner faces higher personal liability risk (for example, a doctor)</li>
+    <li>Each partner already has a holding LLC for other properties</li>
+  </ul>
+
+  <footer>
+    General information only, not legal or tax advice. LLC fees and rules vary by state. Have a local real-estate attorney draft the operating agreement and a CPA set up the partnership return.
+  </footer>
+</main>
+</body>
+</html>
